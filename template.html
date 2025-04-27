@@ -1,0 +1,1684 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>जल गंगा संवर्धन अभियान - जिला प्रदर्शन रिपोर्ट</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Font configuration */
+        @font-face {
+            font-family: 'Noto Sans Devanagari';
+            src: url('https://fonts.gstatic.com/s/notosansdevanagari/v28/TuGoUUFzXI5FBtUq5a8bjKYTZIQkix-Qq_5PJivW3k4.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Noto Sans Devanagari', 'Hind', 'Poppins', 'Tiro Devanagari Hindi', Arial, sans-serif;
+        }
+
+        /* Primary Colors */
+        :root {
+            --primary-color: #0a4d8c;
+            --secondary-color: #2D8CC0;
+            --accent-color: #e36627;
+            --white: #FFFFFF;
+            --light-gray: #F5F7FA;
+            --dark-text: #1e293b;
+            --medium-text: #475569;
+            --success: #28a745;
+            --warning: #ffc107;
+            --danger: #dc3545;
+            --info: #17a2b8;
+            --border-color: #e2e8f0;
+            --header-gradient-start: #b05736;
+            --header-gradient-end: #c76846;
+        }
+
+        /* A2 size setup */
+        @page {
+            size: A2 portrait;
+            margin: 15mm;
+        }
+
+        body {
+            background-color: var(--light-gray);
+            color: var(--dark-text);
+            line-height: 1.6;
+            font-size: 14pt;
+            /* A2 dimensions */
+            width: 420mm;
+            height: 594mm;
+            margin: 0 auto;
+        }
+
+        .page-container {
+            max-width: 100%;
+            margin: 0 auto;
+            background-color: var(--white);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            min-height: 100vh;
+        }
+
+        /* Header styling exactly as original template */
+        header {
+            background: linear-gradient(to right, var(--header-gradient-start), var(--header-gradient-end));
+            color: white;
+            padding: 1.5rem 2rem;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+            page-break-after: avoid;
+        }
+
+        .header-logo {
+            width: 80px;
+            height: auto;
+            margin-right: 1.5rem;
+        }
+
+        .header-content {
+            flex: 1;
+        }
+
+        .header-content h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .subheading {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+
+        .department {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+        }
+
+        .report-date-header {
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            opacity: 0.8;
+        }
+
+        /* Main content styling */
+        .content {
+            padding: 5mm;
+        }
+
+        /* Section styling */
+        .section {
+            margin-bottom: 10mm;
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            page-break-inside: avoid;
+        }
+
+        .section-header {
+            padding: 3mm 4mm;
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 18pt;
+            font-weight: 600;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+
+        .section-content {
+            padding: 5mm;
+        }
+
+        /* KPI cards styling */
+        .kpi-section {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5mm;
+            margin-bottom: 10mm;
+        }
+
+        .kpi-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            padding: 5mm;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+            min-height: 60mm;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .kpi-card:hover {
+            transform: translateY(-1mm);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .kpi-title {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 16pt;
+            margin-bottom: 2mm;
+        }
+
+        .kpi-value {
+            font-size: 26pt;
+            font-weight: 700;
+            margin: 2mm 0;
+            color: var(--secondary-color);
+        }
+
+        .kpi-target, .kpi-rank {
+            font-size: 14pt;
+            color: var(--medium-text);
+            margin-bottom: 2mm;
+        }
+
+        /* Grade badges using gradients */
+        .grade-badge {
+            position: absolute;
+            top: 3mm;
+            right: 3mm;
+            padding: 1mm 3mm;
+            border-radius: 20px;
+            font-size: 12pt;
+            font-weight: 600;
+            color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .grade-badge.excellent {
+            background: linear-gradient(135deg, #34c759 0%, #28a745 100%);
+        }
+
+        .grade-badge.good {
+            background: linear-gradient(135deg, #30b0c7 0%, #17a2b8 100%);
+        }
+
+        .grade-badge.average {
+            background: linear-gradient(135deg, #ffcc00 0%, #ffc107 100%);
+            color: #333;
+        }
+
+        .grade-badge.poor {
+            background: linear-gradient(135deg, #fd7e14 0%, #ff9800 100%);
+        }
+
+        .grade-badge.very-poor {
+            background: linear-gradient(135deg, #ff3b30 0%, #dc3545 100%);
+        }
+
+        .trend-indicator {
+            display: inline-block;
+            margin-left: 0.5rem;
+            font-size: 14pt;
+        }
+
+        .trend-up {
+            color: var(--success);
+        }
+
+        .trend-down {
+            color: var(--danger);
+        }
+
+        .trend-neutral {
+            color: var(--warning);
+        }
+
+        /* Improved District Spectrum */
+        .district-spectrum-container {
+            margin: 10mm 0;
+            padding: 6mm;
+            border-radius: 8px;
+            background-color: white;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            page-break-inside: avoid;
+        }
+
+        .spectrum-title {
+            color: var(--primary-color);
+            font-size: 18pt;
+            font-weight: 600;
+            margin-bottom: 5mm;
+            text-align: center;
+        }
+
+        /* Updated spectrum slider with median and average markers */
+        .spectrum-slider {
+            position: relative;
+            height: 2mm;
+            margin: 10mm 0 8mm 0;
+            border-radius: 4px;
+            background: linear-gradient(to right, var(--danger), var(--warning), var(--success));
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .spectrum-marker {
+            position: absolute;
+            top: -4mm;
+            width: 8mm;
+            height: 8mm;
+            margin-left: -4mm;
+            background-color: var(--primary-color);
+            border: 2px solid white;
+            border-radius: 50%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            z-index: 3; /* Ensure district marker is on top */
+        }
+
+        .spectrum-median-marker, .spectrum-average-marker {
+            position: absolute;
+            top: -3mm;
+            width: 1mm;
+            height: 8mm;
+            z-index: 2;
+        }
+
+        .spectrum-median-marker {
+            border-left: 2px dashed #333;
+        }
+
+        .spectrum-average-marker {
+            border-left: 2px solid #333;
+        }
+
+        .marker-label, .median-label, .average-label {
+            position: absolute;
+            transform: translateX(-50%);
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1mm 3mm;
+            border-radius: 4px;
+            font-size: 12pt;
+            white-space: nowrap;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .marker-label {
+            top: -12mm;
+            left: 50%;
+            z-index: 4;
+        }
+
+        .median-label, .average-label {
+            top: -10mm;
+            left: 0;
+            font-size: 10pt;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .marker-label:after, .median-label:after, .average-label:after {
+            content: '';
+            position: absolute;
+            bottom: -2mm;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 2mm solid transparent;
+            border-right: 2mm solid transparent;
+        }
+
+        .marker-label:after {
+            border-top: 2mm solid var(--primary-color);
+        }
+
+        .median-label:after, .average-label:after {
+            border-top: 1.5mm solid rgba(0, 0, 0, 0.7);
+            bottom: -1.5mm;
+        }
+
+        /* Spacing for the spectrum labels */
+        .spectrum-labels {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 5mm;
+            margin-top: 5mm;
+        }
+
+        .spectrum-label {
+            font-size: 12pt;
+            text-align: center;
+            color: var(--medium-text);
+        }
+
+        .spectrum-value {
+            font-weight: 600;
+            color: var(--dark-text);
+        }
+
+        /* Performance capsules */
+        .performance-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5mm 4mm;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 12pt;
+            min-width: 30mm;
+            white-space: nowrap;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+            color: white;
+        }
+
+        .high {
+            background: linear-gradient(to right, #0056a6, #2D8CC0);
+        }
+
+        .above-avg {
+            background: linear-gradient(to right, #28a745, #5cb85c);
+        }
+
+        .average {
+            background: linear-gradient(to right, #ffc107, #ffdb58);
+            color: #333;
+        }
+
+        .below-avg {
+            background: linear-gradient(to right, #fd7e14, #ff9800);
+        }
+
+        .critical {
+            background: linear-gradient(to right, #dc3545, #ff6b6b);
+        }
+
+        /* Component analysis */
+        .component-section {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            margin-bottom: 10mm;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            page-break-inside: avoid;
+        }
+
+        .component-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 3mm 4mm;
+            font-size: 18pt;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .component-score-badge {
+            background-color: white;
+            color: var(--primary-color);
+            padding: 1mm 3mm;
+            border-radius: 20px;
+            font-size: 12pt;
+            font-weight: 600;
+        }
+
+        .component-content {
+            padding: 5mm;
+        }
+
+        .component-stats {
+            display: flex;
+            gap: 5mm;
+            margin-bottom: 5mm;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            flex: 1;
+            min-width: 50mm;
+        }
+
+        .stat-label {
+            font-size: 14pt;
+            color: var(--medium-text);
+            margin-bottom: 2mm;
+        }
+
+        .stat-value {
+            font-size: 20pt;
+            font-weight: 600;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+
+        .stat-progress {
+            margin-top: 2mm;
+            height: 2mm;
+            background-color: #e2e8f0;
+            border-radius: 1mm;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background-color: var(--accent-color);
+            border-radius: 1mm;
+        }
+
+        /* Top performers */
+        .top-performers {
+            margin-top: 5mm;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .top-performers-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2mm 3mm;
+            font-size: 14pt;
+            font-weight: 500;
+        }
+
+        .top-performers-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3mm;
+            padding: 3mm;
+        }
+
+        .performer-card {
+            flex: 1;
+            min-width: 60mm;
+            background-color: var(--light-gray);
+            border-radius: 8px;
+            padding: 3mm;
+        }
+
+        .performer-title {
+            font-size: 12pt;
+            color: var(--medium-text);
+            margin-bottom: 2mm;
+        }
+
+        .performer-name {
+            font-size: 16pt;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 2mm;
+        }
+
+        .performer-stats {
+            font-size: 12pt;
+            color: var(--medium-text);
+        }
+
+        .performer-value {
+            font-weight: 600;
+            color: var(--dark-text);
+        }
+
+        /* Block performance styling */
+        .block-performance {
+            margin-top: 5mm;
+        }
+
+        .block-header {
+            font-size: 16pt;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 3mm;
+        }
+
+        /* Improved table styling */
+        .block-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 5mm;
+            border: 1px solid #b0b0b0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .block-table th, 
+        .block-table td {
+            padding: 3mm 4mm;
+            text-align: left;
+            border: 1px solid #d0d0d0;
+        }
+
+        .block-table th {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 500;
+            border: 1px solid #5680ad;
+        }
+
+        .block-table tr:nth-child(even) {
+            background-color: var(--light-gray);
+        }
+
+        .block-table tr:hover {
+            background-color: #f0f7ff;
+        }
+
+        .table-container {
+            overflow-x: auto;
+        }
+
+        /* Chart styling */
+        .chart-container {
+            height: 70mm;
+            margin-top: 5mm;
+        }
+
+        /* Recommendations styling with improved priority badges */
+        .recommendations {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            padding: 5mm;
+            margin-bottom: 10mm;
+            border: 1px solid var(--border-color);
+            page-break-inside: avoid;
+        }
+
+        .recommendations-title {
+            font-size: 18pt;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 5mm;
+            border-bottom: 1px solid var(--primary-color);
+            padding-bottom: 2mm;
+        }
+
+        .recommendation-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .recommendation-item {
+            margin-bottom: 3mm;
+            padding: 3mm;
+            background-color: var(--light-gray);
+            border-radius: 2mm;
+            box-shadow: 0 0.5mm 1mm rgba(0, 0, 0, 0.05);
+        }
+
+        .recommendation-priority {
+            display: inline-block;
+            padding: 1mm 2mm;
+            border-radius: 1mm;
+            font-size: 12pt;
+            margin-right: 2mm;
+            font-weight: bold;
+            color: white;
+        }
+
+        .priority-high {
+            background-color: #dc3545;
+        }
+
+        .priority-medium {
+            background-color: #ffc107;
+            color: #212529;
+        }
+
+        .priority-low {
+            background-color: #28a745;
+        }
+
+        .recommendation-component {
+            display: inline-block;
+            padding: 1mm 2mm;
+            border-radius: 1mm;
+            font-size: 12pt;
+            margin-right: 2mm;
+            font-weight: bold;
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .recommendation-text {
+            display: block;
+            margin-top: 2mm;
+            font-size: 14pt;
+        }
+
+        /* Grade badges */
+        .grade {
+            padding: 1mm 2mm;
+            border-radius: 1mm;
+            font-size: 12pt;
+            font-weight: bold;
+            display: inline-block;
+            text-align: center;
+            min-width: 8mm;
+            color: white;
+            margin-left: 2mm;
+        }
+
+        .grade-a {
+            background: linear-gradient(to right, #34c759, #28a745);
+        }
+
+        .grade-b {
+            background: linear-gradient(to right, #30b0c7, #17a2b8);
+        }
+
+        .grade-c {
+            background: linear-gradient(to right, #ffcc00, #ffc107);
+            color: #212529;
+        }
+
+        .grade-d {
+            background: linear-gradient(to right, #ff3b30, #dc3545);
+        }
+
+        /* Print optimization */
+        @media print {
+            html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6 { 
+                -webkit-print-color-adjust: exact !important; 
+                print-color-adjust: exact !important;
+                color-adjust: exact !important;
+            }
+            
+            body {
+                width: 420mm;  /* A2 width */
+                height: 594mm; /* A2 height */
+                margin: 0;
+                padding: 0;
+                font-size: 14pt; /* Base font size for A2 */
+                background-color: white;
+            }
+            
+            .page-container {
+                max-width: none;
+                width: 100%;
+                box-shadow: none;
+            }
+
+            /* Page break controls */
+            .page-break {
+                page-break-before: always;
+                break-before: page;
+            }
+            
+            /* Prevent element breaks */
+            .kpi-card, .component-section, 
+            .chart-container, .recommendations, .performer-card { 
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+            
+            /* Prevent header page break */
+            header, .section-header, .component-header {
+                page-break-after: avoid !important;
+                break-after: avoid !important;
+            }
+
+            .keep-together {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+        }
+
+        /* Small screens adjustment */
+        @media (max-width: 768px) {
+            .kpi-section {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .kpi-section {
+                grid-template-columns: 1fr;
+            }
+
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .header-logo {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-container">
+        <!-- Page 1 Content -->
+        <header>
+            <img src="https://i.pinimg.com/736x/c8/2e/2a/c82e2ad64aaf6b33880b1dca58714cb5.jpg" alt="Jal Ganga Samvardhan Abhiyan Logo" class="header-logo">
+            <div class="header-content">
+                <h1>जल गंगा संवर्धन अभियान</h1>
+                <p class="subheading">प्रदर्शन मॉनिटरिंग डैशबोर्ड - {{ district_name }}</p>
+                <p class="department">मध्य प्रदेश राज्य रोजगार गारंटी परिषद<br>मध्य प्रदेश सरकार</p>
+                <p class="report-date-header">रिपोर्ट दिनांक: {{ report_date }} | जनरेट: {{ current_datetime }}</p>
+            </div>
+        </header>
+
+        <div class="content">
+            <!-- KPI Section -->
+            <div class="section">
+                <div class="section-header">प्रमुख प्रदर्शन संकेतक (KPI)</div>
+                <div class="section-content">
+                    <div class="kpi-section">
+                        <div class="kpi-card">
+                            <div class="kpi-title">कुल स्कोर</div>
+                            <div class="kpi-value">{{ kpi.total_marks.current }}<span class="trend-indicator {{ kpi.total_marks.trend_class }}">{{ kpi.total_marks.trend_icon }}</span></div>
+                            <div class="kpi-target">कुल अंक: 100</div>
+                            <div class="kpi-rank">रैंक: {{ kpi.rank.current }}/{{ kpi.rank.total_districts }}</div>
+                            <div class="grade-badge {{ kpi.total_marks.grade_class }}">{{ kpi.total_marks.grade }}</div>
+                        </div>
+                        
+                        <div class="kpi-card">
+                            <div class="kpi-title">पुराने कार्य (NRM)</div>
+                            <div class="kpi-value">{{ kpi.old_work.marks }}<span class="trend-indicator {{ kpi.old_work.trend_class }}">{{ kpi.old_work.trend_icon }}</span></div>
+                            <div class="kpi-target">अधिकतम अंक: 20</div>
+                            <div class="kpi-rank">प्रारंभ कार्य: {{ kpi.old_work.completed }}</div>
+                            <div class="grade-badge {{ kpi.old_work.grade_class }}">{{ kpi.old_work.grade }}</div>
+                        </div>
+                        
+                        <div class="kpi-card">
+                            <div class="kpi-title">फार्म पोंड</div>
+                            <div class="kpi-value">{{ kpi.farm_ponds.marks }}<span class="trend-indicator {{ kpi.farm_ponds.trend_class }}">{{ kpi.farm_ponds.trend_icon }}</span></div>
+                            <div class="kpi-target">अधिकतम अंक: 30</div>
+                            <div class="kpi-rank">प्रारंभ कार्य: {{ kpi.farm_ponds.completed }}</div>
+                            <div class="grade-badge {{ kpi.farm_ponds.grade_class }}">{{ kpi.farm_ponds.grade }}</div>
+                        </div>
+                        
+                        <div class="kpi-card">
+                            <div class="kpi-title">डगवेल रिचार्ज</div>
+                            <div class="kpi-value">{{ kpi.dugwell.marks }}<span class="trend-indicator {{ kpi.dugwell.trend_class }}">{{ kpi.dugwell.trend_icon }}</span></div>
+                            <div class="kpi-target">अधिकतम अंक: 20</div>
+                            <div class="kpi-rank">प्रारंभ कार्य: {{ kpi.dugwell.completed }}</div>
+                            <div class="grade-badge {{ kpi.dugwell.grade_class }}">{{ kpi.dugwell.grade }}</div>
+                        </div>
+                        
+                        <div class="kpi-card">
+                            <div class="kpi-title">अमृत सरोवर</div>
+                            <div class="kpi-value">{{ kpi.amrit_sarovar.marks }}<span class="trend-indicator {{ kpi.amrit_sarovar.trend_class }}">{{ kpi.amrit_sarovar.trend_icon }}</span></div>
+                            <div class="kpi-target">अधिकतम अंक: 20</div>
+                            <div class="kpi-rank">प्रारंभ कार्य: {{ kpi.amrit_sarovar.completed }}</div>
+                            <div class="grade-badge {{ kpi.amrit_sarovar.grade_class }}">{{ kpi.amrit_sarovar.grade }}</div>
+                        </div>
+                        
+                        <div class="kpi-card">
+                            <div class="kpi-title">माई भारत</div>
+                            <div class="kpi-value">{{ kpi.mybharat.marks }}<span class="trend-indicator {{ kpi.mybharat.trend_class }}">{{ kpi.mybharat.trend_icon }}</span></div>
+                            <div class="kpi-target">अधिकतम अंक: 10</div>
+                            <div class="kpi-rank">जलदूत: {{ kpi.mybharat.completed }}</div>
+                            <div class="grade-badge {{ kpi.mybharat.grade_class }}">{{ kpi.mybharat.grade }}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- District Performance Spectrum -->
+            <div class="district-spectrum-container">
+                <h3 class="spectrum-title">जिला प्रदर्शन स्पेक्ट्रम</h3>
+                <div class="spectrum-slider">
+                    <!-- Main district marker position -->
+                    <div class="spectrum-marker" style="left: {{ district_position_percent }}%;">
+                        <div class="marker-label">{{ district_name }}: {{ district_score }}</div>
+                    </div>
+                    
+                    <!-- Calculate median and average markers with zero-division check -->
+                    {% set score_range = highest_district.score - lowest_district.score %}
+
+                    {% if score_range > 0 %}
+                        {# Calculate normally if range is positive #}
+                        {% set median_position = ((state_median.score - lowest_district.score) / score_range * 100)|round(1)|float %}
+                        {% set avg_position = ((state_average.score - lowest_district.score) / score_range * 100)|round(1)|float %}
+                    {% else %}
+                        {# Default positions to 50% if highest and lowest scores are the same (or range is zero/negative) #}
+                        {% set median_position = 50.0 %}
+                        {% set avg_position = 50.0 %}
+                    {% endif %}
+
+                    {# --- CORRECTED CLAMPING using standard min/max filters --- #}
+                    {% set median_position = [[median_position, 100]|min, 0]|max %}
+                    {% set avg_position = [[avg_position, 100]|min, 0]|max %}
+                        
+                    <!-- Add median marker -->
+                    <div class="spectrum-median-marker" style="left: {{ median_position }}%;">
+                        <div class="median-label">मध्यमान: {{ state_median.score }}</div>
+                    </div>
+                    
+                    <!-- Add average marker -->
+                    <div class="spectrum-average-marker" style="left: {{ avg_position }}%;">
+                        <div class="average-label">औसत: {{ state_average.score }}</div>
+                    </div>
+                </div>
+                <div class="spectrum-labels">
+                    <div class="spectrum-label">
+                        <div>सबसे कम स्कोर</div>
+                        <div class="spectrum-value">{{ lowest_district.name }}: {{ lowest_district.score }}</div>
+                    </div>
+                    <div class="spectrum-label">
+                        <div>राज्य मध्यमान</div>
+                        <div class="spectrum-value">{{ state_median.score }}</div>
+                    </div>
+                    <div class="spectrum-label">
+                        <div>राज्य औसत</div>
+                        <div class="spectrum-value">{{ state_average.score }}</div>
+                    </div>
+                    <div class="spectrum-label">
+                        <div>सर्वश्रेष्ठ स्कोर</div>
+                        <div class="spectrum-value">{{ highest_district.name }}: {{ highest_district.score }}</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Component Performance Table -->
+            <div class="section keep-together">
+                <div class="section-header">घटक प्रदर्शन</div>
+                <div class="section-content">
+                    <div class="table-container">
+                        <table class="block-table">
+                            <thead>
+                                <tr>
+                                    <th>घटक</th>
+                                    <th>स्कोर</th>
+                                    <th>शीर्ष जिला</th>
+                                    <th>रैंक</th>
+                                    <th>प्रदर्शन</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>माई भारत (जलदूत)</td>
+                                    <td>{{ kpi.mybharat.marks }} / 10</td>
+                                    <td>आगर-मालवा</td>
+                                    <td>{% if kpi.mybharat.rank is defined %}{{ kpi.mybharat.rank }}{% else %}-{% endif %}</td>
+                                    <td><div class="performance-badge high">★ उत्कृष्ट</div></td>
+                                </tr>
+                                <tr>
+                                    <td>फार्म पोंड</td>
+                                    <td>{{ kpi.farm_ponds.marks }} / 30</td>
+                                    <td>{{ farm_ponds.top_score.name }}</td>
+                                    <td>{% if kpi.farm_ponds.rank is defined %}{{ kpi.farm_ponds.rank }}{% else %}-{% endif %}</td>
+                                    <td>
+                                        <div class="performance-badge 
+                                        {% if 'उत्कृष्ट' in farm_ponds.district_position_vs_state.completion_status %}high
+                                        {% elif 'अच्छा' in farm_ponds.district_position_vs_state.completion_status %}above-avg
+                                        {% elif 'औसत' in farm_ponds.district_position_vs_state.completion_status %}average
+                                        {% elif 'निम्न' in farm_ponds.district_position_vs_state.completion_status %}below-avg
+                                        {% else %}critical{% endif %}">
+                                        {{ farm_ponds.district_position_vs_state.completion_status }}
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>अमृत सरोवर</td>
+                                    <td>{{ kpi.amrit_sarovar.marks }} / 20</td>
+                                    <td>{{ amrit_sarovar.top_score.name }}</td>
+                                    <td>{% if kpi.amrit_sarovar.rank is defined %}{{ kpi.amrit_sarovar.rank }}{% else %}-{% endif %}</td>
+                                    <td>
+                                        <div class="performance-badge 
+                                        {% if kpi.amrit_sarovar.grade == 'उत्कृष्ट' %}high
+                                        {% elif kpi.amrit_sarovar.grade == 'अच्छा' %}above-avg
+                                        {% elif kpi.amrit_sarovar.grade == 'औसत' %}average
+                                        {% elif kpi.amrit_sarovar.grade == 'निम्न' %}below-avg
+                                        {% else %}critical{% endif %}">
+                                        {{ kpi.amrit_sarovar.grade }}
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>डगवेल रिचार्ज</td>
+                                    <td>{{ kpi.dugwell.marks }} / 20</td>
+                                    <td>{{ dugwell.top_score.name }}</td>
+                                    <td>{% if kpi.dugwell.rank is defined %}{{ kpi.dugwell.rank }}{% else %}-{% endif %}</td>
+                                    <td>
+                                        <div class="performance-badge 
+                                        {% if 'उत्कृष्ट' in dugwell.district_position_vs_state.status %}high
+                                        {% elif 'अच्छा' in dugwell.district_position_vs_state.status %}above-avg
+                                        {% elif 'औसत' in dugwell.district_position_vs_state.status %}average
+                                        {% elif 'निम्न' in dugwell.district_position_vs_state.status %}below-avg
+                                        {% else %}critical{% endif %}">
+                                        {{ dugwell.district_position_vs_state.status }}
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>पुराने कार्य (NRM)</td>
+                                    <td>{{ kpi.old_work.marks }} / 20</td>
+                                    <td>{{ old_works.top_score.name }}</td>
+                                    <td>{% if kpi.old_work.rank is defined %}{{ kpi.old_work.rank }}{% else %}-{% endif %}</td>
+                                    <td>
+                                        <div class="performance-badge 
+                                        {% if old_works.financial_reduction_class == 'high' %}high
+                                        {% elif old_works.financial_reduction_class == 'above' %}above-avg
+                                        {% elif old_works.financial_reduction_class == 'average' %}average
+                                        {% elif old_works.financial_reduction_class == 'below' %}below-avg
+                                        {% else %}critical{% endif %}">
+                                        {{ old_works.financial_reduction_status }}
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page break -->
+            <div class="page-break"></div>
+
+            <!-- Financial Progress Component -->
+            <div class="component-section">
+                <div class="component-header">
+                    वित्तीय प्रगति विश्लेषण
+                    <div class="component-score-badge">स्कोर: {{ old_works.district_data.financial_progress_marks }}/6</div>
+                </div>
+                <div class="component-content">
+                    <div class="component-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">30 मार्च को लंबित राशि (लाख में)</div>
+                            <div class="stat-value">{{ old_works.district_data.financial_progress_details.baseline_pending_lakhs }}</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">वर्तमान लंबित राशि (लाख में)</div>
+                            <div class="stat-value">{{ old_works.district_data.financial_progress_details.current_pending_lakhs }}</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">कमी प्रतिशत</div>
+                            <div class="stat-value">{{ old_works.district_data.financial_progress_details.reduction_percentage }}%
+                                <div class="performance-badge {{ old_works.financial_reduction_class }}" style="margin-left: 10px; font-size: 0.8rem;">
+                                    {{ old_works.financial_reduction_status }}
+                                </div>
+                            </div>
+                            <div class="stat-progress">
+                                <div class="progress-bar" style="width: {{ old_works.district_data.financial_progress_details.reduction_percentage }}%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="top-performers">
+                        <div class="top-performers-header">राज्य स्तरीय वित्तीय प्रगति तुलना</div>
+                        <div class="top-performers-content">
+                            <div class="performer-card">
+                                <div class="performer-title">सर्वश्रेष्ठ वित्तीय प्रगति वाला जिला</div>
+                                <div class="performer-name">{{ old_works.financial_top_performer.name }}</div>
+                                <div class="performer-stats">
+                                    <div>कमी प्रतिशत: <span class="performer-value">{{ old_works.financial_top_performer.reduction_percentage }}%</span></div>
+                                    <div>फाइनेंशियल स्कोर: <span class="performer-value">{{ old_works.financial_top_performer.marks }}</span></div>
+                                </div>
+                            </div>
+                            <div class="performer-card">
+                                <div class="performer-title">{{ district_name }} का स्थान</div>
+                                <div class="performer-stats">
+                                    <div>कुल जिले: <span class="performer-value">52</span></div>
+                                    <div>राज्य मध्यमान कमी: <span class="performer-value">{{ old_works.state_median_reduction }}%</span></div>
+                                    <div>राज्य औसत कमी: <span class="performer-value">{{ old_works.state_avg_reduction }}%</span></div>
+                                    <div>स्थिति: 
+                                        <span class="performer-value">
+                                            <div class="performance-badge {{ old_works.financial_reduction_class }}" style="margin-top: 5px; display: inline-block;">
+                                                {{ old_works.financial_reduction_status }}
+                                            </div>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Farm Ponds Component Analysis -->
+            <div class="component-section">
+                <div class="component-header">
+                    फार्म पोंड विश्लेषण
+                    <div class="component-score-badge">स्कोर: {{ farm_ponds.district_data.marks }}/30</div>
+                </div>
+                <div class="component-content">
+                    <div class="component-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">प्रारंभ कार्य</div>
+                            <div class="stat-value">{{ farm_ponds.district_data.actual_count }}</div>
+                            <div class="stat-progress">
+                                <div class="progress-bar" style="width: {{ farm_ponds.district_data.completion_percent }}%;"></div>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">टारगेट</div>
+                            <div class="stat-value">{{ farm_ponds.district_data.target }}</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">प्रदर्शन स्थिति</div>
+                            <div class="stat-value">{{ farm_ponds.district_position_vs_state.completion_status }}</div>
+                        </div>
+                    </div>
+
+                    <div class="top-performers">
+                        <div class="top-performers-header">राज्य स्तरीय तुलना</div>
+                        <div class="top-performers-content">
+                            <div class="performer-card">
+                                <div class="performer-title">स्कोर के आधार पर सर्वश्रेष्ठ</div>
+                                <div class="performer-name">{{ farm_ponds.top_score.name }}</div>
+                                <div class="performer-stats">
+                                    <div>स्कोर: <span class="performer-value">{{ farm_ponds.top_score.marks }}/30</span></div>
+                                    <div>प्रारंभ कार्य: <span class="performer-value">{{ farm_ponds.top_score.actual_count }}</span></div>
+                                    <div>टारगेट: <span class="performer-value">{{ farm_ponds.top_score.target }}</span></div>
+                                </div>
+                            </div>
+                            <div class="performer-card">
+                                <div class="performer-title">कार्य संख्या के आधार पर सर्वश्रेष्ठ</div>
+                                <div class="performer-name">{{ farm_ponds.top_count.name }}</div>
+                                <div class="performer-stats">
+                                    <div>प्रारंभ कार्य: <span class="performer-value">{{ farm_ponds.top_count.actual_count }}</span></div>
+                                    <div>स्कोर: <span class="performer-value">{{ farm_ponds.top_count.marks }}/30</span></div>
+                                    <div>टारगेट: <span class="performer-value">{{ farm_ponds.top_count.target }}</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block-performance">
+                        <div class="block-header">ब्लॉक स्तरीय प्रदर्शन</div>
+                        <div class="table-container">
+                            <table class="block-table">
+                                <thead>
+                                    <tr>
+                                        <th>ब्लॉक का नाम</th>
+                                        <th>प्रारंभ कार्य (आज)</th>
+                                        <th>प्रारंभ कार्य (पिछला दिन)</th>
+                                        <th>परिवर्तन</th>
+                                        <th>टॉप पंचायत</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for block in farm_ponds.block_data %}
+                                    <tr>
+                                        <td>{{ block.name }}</td>
+                                        <td>{{ block.actual_count_today }}</td>
+                                        <td>{{ block.actual_count_daybefore }}</td>
+                                        <td>{{ block.change }}</td>
+                                        <td>{{ block.top_panchayat }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="farmPondsBlockChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page break -->
+            <div class="page-break"></div>
+
+            <!-- Amrit Sarovar Component Analysis -->
+            <div class="component-section">
+                <div class="component-header">
+                    अमृत सरोवर विश्लेषण
+                    <div class="component-score-badge">स्कोर: {{ amrit_sarovar.district_data.marks }}/20</div>
+                </div>
+                <div class="component-content">
+                    <div class="component-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">प्रारंभ कार्य</div>
+                            <div class="stat-value">{{ amrit_sarovar.district_data.actual_count }}</div>
+                            <div class="stat-progress">
+                                <div class="progress-bar" style="width: {{ amrit_sarovar.district_data.completion_percent }}%;"></div>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">टारगेट</div>
+                            <div class="stat-value">{{ amrit_sarovar.district_data.target }}</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">कार्य प्रारम्भ प्रतिशत</div>
+                            <div class="stat-value">{{ amrit_sarovar.district_data.completion_percent }}%</div>
+                        </div>
+                    </div>
+
+                    <div class="top-performers">
+                        <div class="top-performers-header">राज्य स्तरीय तुलना</div>
+                        <div class="top-performers-content">
+                            <div class="performer-card">
+                                <div class="performer-title">स्कोर के आधार पर सर्वश्रेष्ठ</div>
+                                <div class="performer-name">{{ amrit_sarovar.top_score.name }}</div>
+                                <div class="performer-stats">
+                                    <div>स्कोर: <span class="performer-value">{{ amrit_sarovar.top_score.marks }}/20</span></div>
+                                    <div>प्रारंभ कार्य: <span class="performer-value">{{ amrit_sarovar.top_score.actual_count }}</span></div>
+                                    <div>टारगेट: <span class="performer-value">{{ amrit_sarovar.top_score.target }}</span></div>
+                                </div>
+                            </div>
+                            <div class="performer-card">
+                                <div class="performer-title">कार्य संख्या के आधार पर सर्वश्रेष्ठ</div>
+                                <div class="performer-name">{{ amrit_sarovar.top_count.name }}</div>
+                                <div class="performer-stats">
+                                    <div>प्रारंभ कार्य: <span class="performer-value">{{ amrit_sarovar.top_count.actual_count }}</span></div>
+                                    <div>स्कोर: <span class="performer-value">{{ amrit_sarovar.top_count.marks }}/20</span></div>
+                                    <div>टारगेट: <span class="performer-value">{{ amrit_sarovar.top_count.target }}</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dugwell Recharge Component Analysis -->
+            <div class="component-section">
+                <div class="component-header">
+                    डगवेल रिचार्ज विश्लेषण
+                    <div class="component-score-badge">स्कोर: {{ dugwell.district_data.marks }}/20</div>
+                </div>
+                <div class="component-content">
+                    <div class="component-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">प्रारंभ कार्य</div>
+                            <div class="stat-value">{{ dugwell.district_data.actual_count }}</div>
+                            <div class="stat-progress">
+                                <div class="progress-bar" style="width: {{ dugwell.district_data.completion_percent }}%;"></div>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">टारगेट</div>
+                            <div class="stat-value">{{ dugwell.district_data.target }}</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">प्रदर्शन स्थिति</div>
+                            <div class="stat-value">{{ dugwell.district_position_vs_state.status }}</div>
+                        </div>
+                    </div>
+
+                    <div class="top-performers">
+                        <div class="top-performers-header">राज्य स्तरीय तुलना</div>
+                        <div class="top-performers-content">
+                            <div class="performer-card">
+                                <div class="performer-title">स्कोर के आधार पर सर्वश्रेष्ठ</div>
+                                <div class="performer-name">{{ dugwell.top_score.name }}</div>
+                                <div class="performer-stats">
+                                    <div>स्कोर: <span class="performer-value">{{ dugwell.top_score.marks }}/20</span></div>
+                                    <div>प्रारंभ कार्य: <span class="performer-value">{{ dugwell.top_score.actual_count }}</span></div>
+                                    <div>टारगेट: <span class="performer-value">{{ dugwell.top_score.target }}</span></div>
+                                </div>
+                            </div>
+                            <div class="performer-card">
+                                <div class="performer-title">कार्य संख्या के आधार पर सर्वश्रेष्ठ</div>
+                                <div class="performer-name">{{ dugwell.top_count.name }}</div>
+                                <div class="performer-stats">
+                                    <div>प्रारंभ कार्य: <span class="performer-value">{{ dugwell.top_count.actual_count }}</span></div>
+                                    <div>स्कोर: <span class="performer-value">{{ dugwell.top_count.marks }}/20</span></div>
+                                    <div>टारगेट: <span class="performer-value">{{ dugwell.top_count.target }}</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block-performance">
+                        <div class="block-header">ब्लॉक स्तरीय प्रदर्शन</div>
+                        <div class="table-container">
+                            <table class="block-table">
+                                <thead>
+                                    <tr>
+                                        <th>ब्लॉक का नाम</th>
+                                        <th>प्रारंभ कार्य (आज)</th>
+                                        <th>प्रारंभ कार्य (पिछला दिन)</th>
+                                        <th>परिवर्तन</th>
+                                        <th>टॉप पंचायत</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for block in dugwell.block_data %}
+                                    <tr>
+                                        <td>{{ block.name }}</td>
+                                        <td>{{ block.actual_count_today }}</td>
+                                        <td>{{ block.actual_count_daybefore }}</td>
+                                        <td>{{ block.change }}</td>
+                                        <td>{{ block.top_panchayat }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="dugwellBlockChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page break -->
+            <div class="page-break"></div>
+
+            <!-- Old Works (NRM) Component Analysis - UPDATED SECTION -->
+            <div class="component-section">
+                <div class="component-header">
+                    पुराने कार्य (NRM) विश्लेषण
+                    <div class="component-score-badge">स्कोर: {{ old_works.district_data.overall_old_work_score }}/20</div>
+                </div>
+                <div class="component-content">
+                    <div class="component-stats">
+                        <div class="stat-item">
+                            <div class="stat-label">टारगेट अचीवमेंट स्कोर</div>
+                            <div class="stat-value">{{ old_works.district_data.target_achievement_marks }}/14</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">फाइनेंशियल प्रोग्रेस स्कोर</div>
+                            <div class="stat-value">{{ old_works.district_data.financial_progress_marks }}/6</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">पूर्ण किए गए कार्य</div>
+                            <div class="stat-value">{{ old_works.district_data.total_work_completed }}</div>
+                        </div>
+                    </div>
+
+                    <div class="top-performers">
+                        <div class="top-performers-header">राज्य स्तरीय तुलना</div>
+                        <div class="top-performers-content">
+                            <div class="performer-card">
+                                <div class="performer-title">स्कोर के आधार पर सर्वश्रेष्ठ</div>
+                                <div class="performer-name">{{ old_works.top_score.name }}</div>
+                                <div class="performer-stats">
+                                    <div>स्कोर: <span class="performer-value">{{ old_works.top_score.overall_old_work_score }}/20</span></div>
+                                    <div>टारगेट अचीवमेंट: <span class="performer-value">{{ old_works.top_score.target_achievement_marks }}</span></div>
+                                    <div>फाइनेंशियल प्रोग्रेस: <span class="performer-value">{{ old_works.top_score.financial_progress_marks }}</span></div>
+                                    <div>पूर्ण किए गए कार्य: <span class="performer-value">{{ old_works.top_score.total_work_completed }}</span></div>
+                                </div>
+                            </div>
+                            <div class="performer-card">
+                                <div class="performer-title">कार्य संख्या के आधार पर सर्वश्रेष्ठ</div>
+                                <div class="performer-name">{{ old_works.top_count.name }}</div>
+                                <div class="performer-stats">
+                                    <div>पूर्ण किए गए कार्य: <span class="performer-value">{{ old_works.top_count.total_work_completed }}</span></div>
+                                    <div>स्कोर: <span class="performer-value">{% if old_works.top_count.overall_old_work_score is defined %}{{ old_works.top_count.overall_old_work_score }}{% else %}N/A{% endif %}/20</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="block-performance keep-together">
+                        <div class="block-header">ब्लॉक स्तरीय प्रदर्शन</div>
+                        <div class="table-container">
+                            <table class="block-table">
+                                <thead>
+                                    <tr>
+                                        <th>ब्लॉक का नाम</th>
+                                        <th>तालाब निर्माण</th>
+                                        <th>चेक/स्टॉप डैम</th>
+                                        <th>रिचार्ज पिट</th>
+                                        <th>कूप निर्माण</th>
+                                        <th>परकोलेशन तालाब</th>
+                                        <th>खेत तालाब</th>
+                                        <th>अन्य NRM कार्य</th>
+                                        <th>कुल पूर्ण कार्य</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for block in old_works.block_data %}
+                                    <tr>
+                                        <td>{{ block.name }}</td>
+                                        {# --- Corrected Check AND Value Access --- #}
+                                        <td>{{ block.completed_works_by_type_till_today['Talab Nirman'] if block.completed_works_by_type_till_today['Talab Nirman'] is defined else 0 }}</td>
+                                        <td>{{ block.completed_works_by_type_till_today['Check_Stop Dam'] if block.completed_works_by_type_till_today['Check_Stop Dam'] is defined else 0 }}</td>
+                                        <td>{{ block.completed_works_by_type_till_today['Recharge Pit'] if block.completed_works_by_type_till_today['Recharge Pit'] is defined else 0 }}</td>
+                                        <td>{{ block.completed_works_by_type_till_today['Koop Nirman'] if block.completed_works_by_type_till_today['Koop Nirman'] is defined else 0 }}</td>
+                                        <td>{{ block.completed_works_by_type_till_today['Percolation Talab'] if block.completed_works_by_type_till_today['Percolation Talab'] is defined else 0 }}</td>
+                                        <td>{{ block.completed_works_by_type_till_today['Khet Talab'] if block.completed_works_by_type_till_today['Khet Talab'] is defined else 0 }}</td>
+                                        <td>{{ block.completed_works_by_type_till_today['Other NRM Work'] if block.completed_works_by_type_till_today['Other NRM Work'] is defined else 0 }}</td>
+                                        <td>
+                                            {# --- Corrected Check AND Value Access in Total Calculation --- #}
+                                            {% set talab_nirman = block.completed_works_by_type_till_today['Talab Nirman'] if block.completed_works_by_type_till_today['Talab Nirman'] is defined else 0 %}
+                                            {% set check_stop_dam = block.completed_works_by_type_till_today['Check_Stop Dam'] if block.completed_works_by_type_till_today['Check_Stop Dam'] is defined else 0 %}
+                                            {% set recharge_pit = block.completed_works_by_type_till_today['Recharge Pit'] if block.completed_works_by_type_till_today['Recharge Pit'] is defined else 0 %}
+                                            {% set koop_nirman = block.completed_works_by_type_till_today['Koop Nirman'] if block.completed_works_by_type_till_today['Koop Nirman'] is defined else 0 %}
+                                            {% set percolation_talab = block.completed_works_by_type_till_today['Percolation Talab'] if block.completed_works_by_type_till_today['Percolation Talab'] is defined else 0 %}
+                                            {% set khet_talab = block.completed_works_by_type_till_today['Khet Talab'] if block.completed_works_by_type_till_today['Khet Talab'] is defined else 0 %}
+                                            {% set other_nrm_work = block.completed_works_by_type_till_today['Other NRM Work'] if block.completed_works_by_type_till_today['Other NRM Work'] is defined else 0 %}
+                                
+                                            {% set total = talab_nirman + check_stop_dam + recharge_pit + koop_nirman + percolation_talab + khet_talab + other_nrm_work %}
+                                            <strong>{{ total }}</strong>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="oldWorksBlockChart"></canvas>
+                        </div>
+                    </div>
+                    
+                    <!-- Work Category Performance -->
+                    <div class="block-performance keep-together">
+                        <div class="block-header">NRM कार्य श्रेणी प्रदर्शन</div>
+                        <div class="table-container">
+                            <table class="block-table">
+                                <thead>
+                                    <tr>
+                                        <th>कार्य प्रकार</th>
+                                        <th>लक्ष्य</th>
+                                        <th>पूर्ण किए गए</th>
+                                        <th>पूर्णता %</th>
+                                        <th>स्कोर</th>
+                                        <th>राज्य में शीर्ष जिला</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Talab Nirman -->
+                                    <tr>
+                                        <td>तालाब निर्माण</td>
+                                        {# Corrected Check and Value Access #}
+                                        <td>{{ old_works.district_data.individual_work_types['Talab Nirman'].target if old_works.district_data.individual_work_types['Talab Nirman'] is defined else 0 }}</td>
+                                        <td>{{ old_works.district_data.individual_work_types['Talab Nirman'].completed if old_works.district_data.individual_work_types['Talab Nirman'] is defined else 0 }}</td>
+                                        <td>{{ old_works.district_data.individual_work_types['Talab Nirman'].achievement_percentage|round(2) if old_works.district_data.individual_work_types['Talab Nirman'] is defined else 0 }}%</td>
+                                        <td>{{ old_works.district_data.individual_work_types['Talab Nirman'].marks if old_works.district_data.individual_work_types['Talab Nirman'] is defined else 0 }}</td>
+                                        <td>{{ old_works.state_category_leaders_today['Talab Nirman'].name if old_works.state_category_leaders_today['Talab Nirman'] is defined else "N/A" }}</td>
+                                    </tr>
+                                    <!-- Check/Stop Dam -->
+                                    <tr>
+                                        <td>चेक/स्टॉप डैम</td>
+                                        {# Already Correct #}
+                                        <td>{{ old_works.district_data.individual_work_types["Check_Stop Dam"].target if old_works.district_data.individual_work_types["Check_Stop Dam"] is defined else 0 }}</td>
+                                        <td>{{ old_works.district_data.individual_work_types["Check_Stop Dam"].completed if old_works.district_data.individual_work_types["Check_Stop Dam"] is defined else 0 }}</td>
+                                        <td>{{ old_works.district_data.individual_work_types["Check_Stop Dam"].achievement_percentage|round(2) if old_works.district_data.individual_work_types["Check_Stop Dam"] is defined else 0 }}%</td>
+                                        <td>{{ old_works.district_data.individual_work_types["Check_Stop Dam"].marks if old_works.district_data.individual_work_types["Check_Stop Dam"] is defined else 0 }}</td>
+                                        <td>{{ old_works.state_category_leaders_today["Check_Stop Dam"].name if old_works.state_category_leaders_today["Check_Stop Dam"] is defined else "N/A" }}</td>
+                                    </tr>
+                                    <!-- Recharge Pit -->
+                                    <tr>
+                                        <td>रिचार्ज पिट</td>
+                                        {# Corrected Check and Value Access #}
+                                        <td>{{ old_works.district_data.individual_work_types['Recharge Pit'].target if old_works.district_data.individual_work_types['Recharge Pit'] is defined else 0 }}</td>
+                                        <td>{{ old_works.district_data.individual_work_types['Recharge Pit'].completed if old_works.district_data.individual_work_types['Recharge Pit'] is defined else 0 }}</td>
+                                        <td>{{ old_works.district_data.individual_work_types['Recharge Pit'].achievement_percentage|round(2) if old_works.district_data.individual_work_types['Recharge Pit'] is defined else 0 }}%</td>
+                                        <td>{{ old_works.district_data.individual_work_types['Recharge Pit'].marks if old_works.district_data.individual_work_types['Recharge Pit'] is defined else 0 }}</td>
+                                        <td>{{ old_works.state_category_leaders_today['Recharge Pit'].name if old_works.state_category_leaders_today['Recharge Pit'] is defined else "N/A" }}</td>
+                                    </tr>
+                                    <!-- Koop Nirman -->
+                                    <tr>
+                                        <td>कूप निर्माण</td>
+                                         {# Corrected Check and Value Access #}
+                                        <td>{{ old_works.district_data.individual_work_types['Koop Nirman'].target if old_works.district_data.individual_work_types['Koop Nirman'] is defined else 0 }}</td>
+                                        <td>{{ old_works.district_data.individual_work_types['Koop Nirman'].completed if old_works.district_data.individual_work_types['Koop Nirman'] is defined else 0 }}</td>
+                                        <td>{{ old_works.district_data.individual_work_types['Koop Nirman'].achievement_percentage|round(2) if old_works.district_data.individual_work_types['Koop Nirman'] is defined else 0 }}%</td>
+                                        <td>{{ old_works.district_data.individual_work_types['Koop Nirman'].marks if old_works.district_data.individual_work_types['Koop Nirman'] is defined else 0 }}</td>
+                                        <td>{{ old_works.state_category_leaders_today['Koop Nirman'].name if old_works.state_category_leaders_today['Koop Nirman'] is defined else "N/A" }}</td>
+                                    </tr>
+                                    <!-- Percolation Talab -->
+                                    <tr>
+                                        <td>परकोलेशन तालाब</td>
+                                         {# Corrected Check and Value Access #}
+                                        <td>{{ old_works.district_data.individual_work_types['Percolation Talab'].target if old_works.district_data.individual_work_types['Percolation Talab'] is defined else 0 }}</td>
+                                        <td>{{ old_works.district_data.individual_work_types['Percolation Talab'].completed if old_works.district_data.individual_work_types['Percolation Talab'] is defined else 0 }}</td>
+                                        <td>{{ old_works.district_data.individual_work_types['Percolation Talab'].achievement_percentage|round(2) if old_works.district_data.individual_work_types['Percolation Talab'] is defined else 0 }}%</td>
+                                        <td>{{ old_works.district_data.individual_work_types['Percolation Talab'].marks if old_works.district_data.individual_work_types['Percolation Talab'] is defined else 0 }}</td>
+                                        <td>{{ old_works.state_category_leaders_today['Percolation Talab'].name if old_works.state_category_leaders_today['Percolation Talab'] is defined else "N/A" }}</td>
+                                    </tr>
+                                    <!-- Khet Talab -->
+                                    <tr>
+                                        <td>खेत तालाब</td>
+                                        {# Corrected Check and Value Access #}
+                                        <td>{{ old_works.district_data.individual_work_types['Khet Talab'].target if old_works.district_data.individual_work_types['Khet Talab'] is defined else 0 }}</td>
+                                        <td>{{ old_works.district_data.individual_work_types['Khet Talab'].completed if old_works.district_data.individual_work_types['Khet Talab'] is defined else 0 }}</td>
+                                        <td>{{ old_works.district_data.individual_work_types['Khet Talab'].achievement_percentage|round(2) if old_works.district_data.individual_work_types['Khet Talab'] is defined else 0 }}%</td>
+                                        <td>{{ old_works.district_data.individual_work_types['Khet Talab'].marks if old_works.district_data.individual_work_types['Khet Talab'] is defined else 0 }}</td>
+                                        <td>{{ old_works.state_category_leaders_today['Khet Talab'].name if old_works.state_category_leaders_today['Khet Talab'] is defined else "N/A" }}</td>
+                                    </tr>
+                                    <!-- Other NRM Work -->
+                                    <tr>
+                                        <td>अन्य NRM कार्य</td>
+                                        {# Already Correct #}
+                                        <td>{{ old_works.district_data.individual_work_types["Other NRM Work"].target if old_works.district_data.individual_work_types["Other NRM Work"] is defined else 0 }}</td>
+                                        <td>{{ old_works.district_data.individual_work_types["Other NRM Work"].completed if old_works.district_data.individual_work_types["Other NRM Work"] is defined else 0 }}</td>
+                                        <td>{{ old_works.district_data.individual_work_types["Other NRM Work"].achievement_percentage|round(2) if old_works.district_data.individual_work_types["Other NRM Work"] is defined else 0 }}%</td>
+                                        <td>{{ old_works.district_data.individual_work_types["Other NRM Work"].marks if old_works.district_data.individual_work_types["Other NRM Work"] is defined else 0 }}</td>
+                                        <td>{{ old_works.state_category_leaders_today["Other NRM Work"].name if old_works.state_category_leaders_today["Other NRM Work"] is defined else "N/A" }}</td>
+                                    </tr>
+                                    <!-- Total -->
+                                    <tr>
+                                        <td><strong>कुल</strong></td>
+                                        {# These should be fine as keys don't have spaces #}
+                                        <td><strong>{{ old_works.district_data.total_work_count if old_works.district_data.total_work_count is defined else 0 }}</strong></td>
+                                        <td><strong>{{ old_works.district_data.total_work_completed if old_works.district_data.total_work_completed is defined else 0 }}</strong></td>
+                                        <td>
+                                            {# Calculation based on direct keys - should be ok #}
+                                            {% set twc = old_works.district_data.total_work_count | default(0) %}
+                                            {% set twcomp = old_works.district_data.total_work_completed | default(0) %}
+                                            {% if twc and twc != 0 %} {# Avoid division by zero #}
+                                                <strong>{{ (twcomp / twc * 100)|round(2) }}%</strong>
+                                            {% else %}
+                                                <strong>N/A</strong> {# Or 0% depending on preference #}
+                                            {% endif %}
+                                        </td>
+                                        <td><strong>{{ old_works.district_data.target_achievement_marks if old_works.district_data.target_achievement_marks is defined else 0 }}</strong></td>
+                                        <td>-</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recommendations Section with improved formatting for JSON structure -->
+            <div class="recommendations">
+                <div class="recommendations-title">प्रमुख सिफारिशें</div>
+                <ul class="recommendation-list">
+                    {% for recommendation in recommendations %}
+                        {% if recommendation is mapping and recommendation.priority is defined and recommendation.component is defined and recommendation.text is defined %}
+                        <li class="recommendation-item">
+                            <span class="recommendation-priority priority-{{ recommendation.priority }}">
+                                {% if recommendation.priority == 'high' %}उच्च प्राथमिकता
+                                {% elif recommendation.priority == 'medium' %}मध्यम प्राथमिकता
+                                {% else %}निम्न प्राथमिकता{% endif %}
+                            </span>
+                            <span class="recommendation-component">{{ recommendation.component }}</span>
+                            <span class="recommendation-text">{{ recommendation.text }}</span>
+                        </li>
+                        {% else %}
+                        <li class="recommendation-item">{{ recommendation }}</li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add necessary JavaScript for charts with improved Hindi text support -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load Noto Sans Devanagari font for chart rendering
+            const fontLink = document.createElement('link');
+            fontLink.rel = 'stylesheet';
+            fontLink.href = 'https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap';
+            document.head.appendChild(fontLink);
+            
+            // Set global Chart.js defaults for Hindi text
+            Chart.defaults.font.family = "'Noto Sans Devanagari', 'Arial', sans-serif";
+            Chart.defaults.font.size = 14;
+            
+            // Common chart options for Hindi text support
+            const chartOptions = {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        labels: {
+                            font: {
+                                family: "'Noto Sans Devanagari', 'Arial', sans-serif",
+                                size: 14
+                            }
+                        }
+                    },
+                    title: {
+                        font: {
+                            family: "'Noto Sans Devanagari', 'Arial', sans-serif",
+                            size: 16,
+                            weight: 'bold'
+                        }
+                    },
+                    tooltip: {
+                        titleFont: {
+                            family: "'Noto Sans Devanagari', 'Arial', sans-serif"
+                        },
+                        bodyFont: {
+                            family: "'Noto Sans Devanagari', 'Arial', sans-serif"
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        ticks: {
+                            font: {
+                                family: "'Noto Sans Devanagari', 'Arial', sans-serif",
+                                size: 14
+                            }
+                        },
+                        title: {
+                            display: true,
+                            text: 'ब्लॉक',
+                            font: {
+                                family: "'Noto Sans Devanagari', 'Arial', sans-serif",
+                                size: 14,
+                                weight: 'bold'
+                            }
+                        }
+                    },
+                    y: {
+                        ticks: {
+                            font: {
+                                family: "'Noto Sans Devanagari', 'Arial', sans-serif",
+                                size: 14
+                            }
+                        },
+                        title: {
+                            display: true,
+                            text: 'प्रारंभ कार्य संख्या',
+                            font: {
+                                family: "'Noto Sans Devanagari', 'Arial', sans-serif",
+                                size: 14,
+                                weight: 'bold'
+                            }
+                        }
+                    }
+                }
+            };
+            
+            // Wait for font to load before rendering charts
+            setTimeout(function() {
+                // Farm Ponds Block Chart
+                const farmPondsBlockCtx = document.getElementById('farmPondsBlockChart');
+                if (farmPondsBlockCtx) {
+                    const farmPondsBlockChart = new Chart(farmPondsBlockCtx.getContext('2d'), {
+                        type: 'bar',
+                        data: {
+                            labels: {{ farm_ponds_block_labels|safe }},
+                            datasets: [{
+                                label: 'प्रारंभ कार्य',
+                                data: {{ farm_ponds_block_values|safe }},
+                                backgroundColor: '#0a4d8c',
+                                borderColor: '#0a4d8c',
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            ...chartOptions,
+                            plugins: {
+                                ...chartOptions.plugins,
+                                title: {
+                                    display: true,
+                                    text: 'ब्लॉक-वार फार्म पोंड प्रारंभ कार्य',
+                                    font: {
+                                        family: "'Noto Sans Devanagari', 'Arial', sans-serif",
+                                        size: 16,
+                                        weight: 'bold'
+                                    }
+                                }
+                            }
+                        }
+                    });
+                }
+    
+                // Dugwell Block Chart
+                const dugwellBlockCtx = document.getElementById('dugwellBlockChart');
+                if (dugwellBlockCtx) {
+                    const dugwellBlockChart = new Chart(dugwellBlockCtx.getContext('2d'), {
+                        type: 'bar',
+                        data: {
+                            labels: {{ dugwell_block_labels|safe }},
+                            datasets: [{
+                                label: 'प्रारंभ कार्य',
+                                data: {{ dugwell_block_values|safe }},
+                                backgroundColor: '#2D8CC0',
+                                borderColor: '#2D8CC0',
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            ...chartOptions,
+                            plugins: {
+                                ...chartOptions.plugins,
+                                title: {
+                                    display: true,
+                                    text: 'ब्लॉक-वार डगवेल रिचार्ज प्रारंभ कार्य',
+                                    font: {
+                                        family: "'Noto Sans Devanagari', 'Arial', sans-serif",
+                                        size: 16,
+                                        weight: 'bold'
+                                    }
+                                }
+                            }
+                        }
+                    });
+                }
+    
+                // Old Works Block Chart
+                const oldWorksBlockCtx = document.getElementById('oldWorksBlockChart');
+                if (oldWorksBlockCtx) {
+                    const oldWorksBlockChart = new Chart(oldWorksBlockCtx.getContext('2d'), {
+                        type: 'bar',
+                        data: {
+                            labels: {{ old_works_block_labels|safe }},
+                            datasets: [{
+                                label: 'पूर्ण किए गए कार्य',
+                                data: {{ old_works_block_values|safe }},
+                                backgroundColor: '#e36627',
+                                borderColor: '#e36627',
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            ...chartOptions,
+                            plugins: {
+                                ...chartOptions.plugins,
+                                title: {
+                                    display: true,
+                                    text: 'ब्लॉक-वार पूर्ण किए गए NRM कार्य',
+                                    font: {
+                                        family: "'Noto Sans Devanagari', 'Arial', sans-serif",
+                                        size: 16,
+                                        weight: 'bold'
+                                    }
+                                }
+                            }
+                        }
+                    });
+                }
+            }, 500); // Small delay to ensure font is loaded
+        });
+    </script>
+</body>
+</html>
